@@ -1,0 +1,34 @@
+<div>
+	<form role="form" name="myForm">
+		<h1>Categorias</h1>
+		<legend><span class="number">1</span>{{title}}</legend>
+		<fieldset>
+			<div ng-class="{error: myForm.name.$invalid}">
+				<label>Nome:</label>
+				<div>
+               <input name="name" ng-model="category.categoryName" type= "text" placeholder="Nome da categoria." required/>
+               <label ng-show="myForm.name.$dirty && myForm.name.$invalid"></span>Nome é obrigatório.</label>
+            </div>   
+         </div>	   
+         <div>
+            <label>Descrição:</label>
+            <div>
+               <input ng-model="category.categoryDescription" type= "text" placeholder= "Descrição da categoria."/>
+            </div>
+         </div>
+         <div>
+            <label>Tipo de Imposto:</label>
+            <div>
+               <select ng-model="category.categoryTaxNumber">
+                  <option ng-repeat="x in taxes" value="{{x.taxNumber}}">{{x.taxName}}</option>
+               </select>
+            </div>
+         </div>
+         <div>
+            <button ng-click="saveCategory(category);" ng-disabled="myForm.$invalid">{{buttonText}}</button>
+         </div>
+        <a href="#/categories">Cancelar</a>
+        <a class="right" href="#/categories">Listar Categorias</a>          
+      </fieldset>
+   </form>
+</div>

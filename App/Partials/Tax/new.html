@@ -1,0 +1,32 @@
+<div>
+	<form role="form" name="myForm">
+		<h1>Impostos</h1>
+		<legend><span class="number">1</span>{{title}}</legend>
+		<fieldset>
+			<div ng-class="{error: myForm.name.$invalid}">
+				<label>Nome:</label>
+				<div>
+               <input name="name" ng-model="tax.taxName" type= "text" placeholder="Nome do imposto." required/>
+               <span ng-show="myForm.name.$dirty && myForm.name.$invalid">Nome é obrigatório.</span>
+            </div>
+         </div>
+        <div>
+            <label>Descrição:</label>
+            <div>
+               <input ng-model="tax.taxDescription" type= "text" placeholder= "Descrição do imposto."/>
+            </div>
+         </div>
+         <div>
+            <label>Percentual:</label>
+            <div>
+               <input name="price" ng-model="tax.taxPercentage" type= "text" placeholder= "Percentual do imposto."/>
+            </div>
+         </div>
+         <div>
+           <button ng-click="saveTax(tax);" ng-disabled="myForm.$invalid">{{buttonText}}</button>
+         </div>
+         <a href="#/taxes">Cancelar</a>
+	      <a class="right" href="#/taxes">Listar Impostos</a>
+      </fieldset>
+   </form>
+</div>

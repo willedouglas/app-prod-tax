@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-app lang="en">
+   <head>
+      <meta charset="utf-8">
+      <link href="Library/css/main.css" rel="stylesheet">
+      <title>Desafio SoftExpert | RESTfull PHP Service with AngularJS.</title>
+   </head>
+   <body>
+      <ul class="topnav">
+        <li class="active"><a href="#/invoices">Venda</a></li>
+        <li><a href="#/products">Produtos</a></li>
+        <li><a href="#/categories">Categoria</a></li>
+        <li><a href="#/taxes">Impostos</a></li>
+        <li class="right"><a href="#">Desafio SoftExpert | Software for excellence.</a></li>
+      </ul>
+      <div class="content">
+         <br/>
+         <br/>
+         <div ng-view="" id="ng-view"></div>
+      </div>
+   </body>   
+      <script src="Library/js/angular.min.js"></script>
+      <script src="Library/js/angular-route.min.js"></script>
+      <script src="Library/js/main.js"></script>  
+      <script src="App/app.js"></script>   
+</html>

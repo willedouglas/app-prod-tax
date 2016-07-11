@@ -1,0 +1,33 @@
+<div>
+    <div ng-show="categories.length > 0">
+
+        <h1>Categorias</h1>
+         <h2><a href="#/category/new">&nbsp;Cadastrar Categoria</a></h2>
+        <table>
+            <thead>
+                <th>#&nbsp;</th>
+                <th>Nome&nbsp;</th>
+                <th>Descrição&nbsp;</th>
+                <th>Imposto&nbsp;</th>
+                <th>Percentual&nbsp;</th>
+                <th>Action&nbsp;</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="data in categories track by $index">
+                    <td>{{data.categoryNumber}}</td>
+                    <td>{{data.categoryName}}</td>
+                    <td>{{data.categoryDescription}}</td>
+                    <td>{{data.taxName}}</td>
+                    <td>{{data.taxPercentage}}%</td>
+                    <td><a href="#/category/edit/{{data.categoryNumber}}">&nbsp; Editar Categoria</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div ng-show="categories.length == 0">
+        <div>
+            <h4>Nenhuma categoria cadastrada.</h4>
+        </div>
+    </div>
+</div>

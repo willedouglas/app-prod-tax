@@ -1,0 +1,46 @@
+<div>
+    <form ng-submit="todoAdd()">
+        <h1>Venda de Produtos</h1>
+	    <legend><span class="number">1</span>{{title}}</legend>
+        <label>Produto</label>
+		<select ng-model="product" required>
+			<option ng-repeat="x in products" value="{{x.productName}},{{x.productPrice}},{{x.taxPercentage}}">Produto: {{x.productName}} - Valor: R$ {{x.productPrice}} Imposto: {{x.taxPercentage}}%</option> 
+		</select>
+		<label>Quantidade</label>
+		<input type="number" ng-model="amount" placeholder="Quantidade" required/>
+        <button type="submit">Adicionar</button>
+    </form>
+    <div ng-show="todoList.length > 1">
+        <h1>Compra:</h1>
+        <h2><a ng-click="remove()">Remover Selecionados</a></h2>
+        <table>
+            <thead>
+                <th>Informações&nbsp;</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="x in todoList">
+                    <td><input type="checkbox" ng-model="x.done">Produto: {{x.product}} | Quantidade: {{x.amount}} | Valor unitário: R$ {{x.price}} | Valor imposto: {{x.tax}} | Total do Produto: R$ {{x.value}} | Total com Impostos: {{x.valueWithTax}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div ng-show="todoList.length > 1">
+        <h1>Totalizadores:</h1>
+        <table>
+            <thead>
+                <th>Quantidade&nbsp;</th>
+                <th>Impostos&nbsp;</th>
+                <th>Produtos&nbsp;</th>
+                <th>Total&nbsp;</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{totals.totalQuantidade}}</td>
+                    <td>R$ {{totals.totalImpostos}}</td>
+                    <td>R$ {{totals.totalProdutos}}</td>
+                    <td>R$ {{totals.totalComImpostos}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<div>
+	<form role="form" name="myForm">
+		<h1>Produtos</h1>
+		<legend><span class="number">1</span>{{title}}</legend>
+		<fieldset>
+			<div ng-class="{error: myForm.name.$invalid}">
+				<label>Nome:</label>
+				<div>
+					<input name="name" ng-model="product.productName" type= "text" placeholder="Nome do produto." required/>
+					<label ng-show="myForm.name.$dirty && myForm.name.$invalid">Nome é obrigatório.</label>
+				</div>
+			</div>
+			<div>
+				<label>Descrição: </label>
+				<div>
+					<textarea ng-model="product.productDescription" type= "text" placeholder= "Descrição do produto."></textarea>
+				</div>
+			</div>
+			<div>
+				<label>Preço:</label>
+				<div>
+					<input name="price" ng-model="product.productPrice" type= "text" placeholder= "Preço do produto." required/>
+				</div>
+			</div>
+			<div>
+				<label>Categoria:</label>
+				<div>
+					<select ng-model="product.productCategoryNumber" required>
+						<option ng-repeat="x in categories" value="{{x.categoryNumber}}">{{x.categoryName}}</option>
+					</select>
+				</div>
+			</div>
+			<div>
+				<button ng-click="saveProduct(product);" ng-disabled="myForm.$invalid">{{buttonText}}</button>
+			</div>
+			<a href="#/products">Cancelar</a>
+			<a class="right" href="#/products">Listar Produtos</a>
+		</fieldset>
+	</form>
+</div>

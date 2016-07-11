@@ -1,0 +1,34 @@
+<div>
+	<form role="form" name="myForm">
+		<h1>Categorias</h1>
+		<legend><span class="number">1</span><a ng-show="category._id">Editando categoria número: {{category._id}}</a></legend>
+		<fieldset>
+			<div ng-class="{error: myForm.name.$invalid}">
+				<label>Nome:</label>
+				<div>
+               <input name="name" ng-model="category.categoryName" type= "text" placeholder="Nome da categoria." required/>
+               <span ng-show="myForm.name.$dirty && myForm.name.$invalid" class="help-inline">Nome é obrigatório.</span>
+            </div>   
+         </div>	   
+         <div>
+            <label> Descrição:</label>
+            <div>
+               <textarea ng-model="category.categoryDescription" type= "text" placeholder= "Descrição da categoria."></textarea>
+            </div>
+         </div>
+		<div class= "form-group">
+			<label>Tipo de Imposto:</label>
+			<div>
+				<select ng-model="category.categoryTaxNumber">
+					<option ng-selected="{{x.taxNumber == filterCondition.categoryTaxNumber}}" ng-repeat="x in taxes" value="{{x.taxNumber}}">{{x.taxName}}</option>
+				</select>
+			</div>
+		</div>
+        <div>
+           <button ng-click="saveCategory(category);" ng-disabled="myForm.$invalid">{{buttonText}}</button>
+        </div>
+		<a ng-show="category._id" href= "#/category/new/">Nova Categoria</a>
+		<a class="right" ng-click="deleteCategory(category)" ng-show="category._id">Deletar Categoria</a>       
+      </fieldset>
+   </form>
+</div>

@@ -1,0 +1,30 @@
+<div>
+    <div ng-show="taxes.length > 0">
+        <h1>Impostos</h1>
+        <h2><a href="#/tax/new">&nbsp;Cadastrar Imposto</a></h2>
+        <table>
+            <thead>
+                <th>#&nbsp;</th>
+                <th>Nome&nbsp;</th>
+                <th>Descrição&nbsp;</th>
+                <th>Percentual&nbsp;</th>
+                <th>Ação&nbsp;</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="data in taxes track by $index">
+                    <td>{{data.taxNumber}}</td>
+                    <td>{{data.taxName}}</td>
+                    <td>{{data.taxDescription}}</td>
+                    <td>{{data.taxPercentage}}%</td>
+                    <td><a href="#/tax/edit/{{data.taxNumber}}">&nbsp;Editar Imposto</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div ng-show="taxes.length == 0">
+        <div>
+            <h4>Nenhum imposto cadastrado.</h4>
+        </div>
+    </div>
+</div>
