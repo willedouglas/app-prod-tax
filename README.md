@@ -1,5 +1,3 @@
-#Challenge App - AppProdTax
+## App Simples Product Tax.
+Simple RESTFul PHP API with AngularJS.
 
-Developed Simple and Open Source RESTfull PHP Api with AngularJS.
-
-Developed by: Douglas Wille
