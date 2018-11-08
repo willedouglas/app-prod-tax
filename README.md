@@ -1,3 +1,3 @@
-## App Product Taxes
+## app-prod-tax
 Simple RESTFul PHP API with AngularJS.
 
